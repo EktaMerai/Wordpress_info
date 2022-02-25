@@ -46,4 +46,17 @@ add_action( 'widgets_init', 'custom_widget_init' );
 
 /* display widget value*/
 <div class="contact_banner"><?php  if (is_active_sidebar('usp_banner')): dynamic_sidebar('contact_banner'); endif; ?></div>
+
+add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_stock', 10 );
+function woocommerce_template_loop_stock() {
+    global $product;
+    if ( ! $product->managing_stock() && ! $product->is_in_stock() ){
+        echo '<span class="stock out-of-stock">Out of Stock</span>';
+	}else {
+		echo '<span class="stock"><span class="in_stock_icon"></span>Op voorraad</span>';
+	}
+    if ( $product->is_on_backorder() == true ) {
+               echo '<span class="stock vanviegen_backorder_stock"><span class="in_stock_icon"></span>Levering op bestelling</span>';
+      } 
+}
 ?>
