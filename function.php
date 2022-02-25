@@ -1,6 +1,6 @@
 <?php 
 /*Display banner in between product like after 4 product*/
-
+/* https://www.dictionary.com/ */
 add_action( 'woocommerce_shop_loop', 'action_woocommerce_shop_loop', 100 );
 function action_woocommerce_shop_loop() {
     // Only on producy cayegory archives
