@@ -108,4 +108,9 @@ function woocommerce_template_loop_stock() {
                echo '<span class="stock vanviegen_backorder_stock"><span class="in_stock_icon"></span>Levering op bestelling</span>';
       } 
 }
+jQuery( document.body ).on( 'checkout_error', function() {
+    // jQuery( 'html, body' ).stop();
+    jQuery("html, body").animate({ scrollTop: 0 }, "slow");
+    return false;
+} );
 ?>
