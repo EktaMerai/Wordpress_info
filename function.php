@@ -113,4 +113,50 @@ jQuery( document.body ).on( 'checkout_error', function() {
     jQuery("html, body").animate({ scrollTop: 0 }, "slow");
     return false;
 } );
+
+// To change add to cart text on single product page
+// add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_custom_single_add_to_cart_text' ); 
+// function woocommerce_custom_single_add_to_cart_text() {
+//     return __( 'Add To Cart', 'woocommerce' ); 
+// }
+
+// // To change add to cart text on product archives(Collection) page
+// add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_custom_product_add_to_cart_text' );  
+// function woocommerce_custom_product_add_to_cart_text() {
+//     return __( 'Add To Cart', 'woocommerce' );
+// }
+
+// add_filter('woocommerce_sale_flash', 'woocommerce_custom_sale_text', 10, 3);
+// function woocommerce_custom_sale_text($text, $post, $_product)
+// {
+// 	return '<span class="onsale">Offer!</span>';
+// }
+// add_filter( 'woocommerce_catalog_orderby', 'misha_rename_default_sorting_options' );
+
+// function misha_rename_default_sorting_options( $options ){
+
+// 	//unset( $options[ 'price-desc' ] ); // remove
+// 	$options[ 'menu_order' ] = 'Default sorting';
+// 	$options[ 'popularity' ] = 'Sort by popularity';
+// 	$options[ 'rating' ] = 'Sort by average rating'; 
+// 	$options[ 'date' ] = 'Sort by newest'; 
+// 	$options[ 'price' ] = 'Sort by price: low to high'; 
+// 	$options[ 'price-desc' ] = 'Sort by price: high to low'; // rename
+
+// 	return $options;
+// }
+// function edit_price_display() {
+//     global $product;
+//     $price = $product->price;
+//     $price_incl_tax = $price + round($price * ( 21 / 100 ), 2);
+//     $price_incl_tax = number_format($price_incl_tax, 2, ",", ".");
+//     $price = number_format($price, 2, ",", ".");
+//     $display_price = '<span class="price">';
+//     $display_price .= '<span class="amount">€ ' . $price_incl_tax .'<small class="woocommerce-price-suffix"> incl BTW</small></span>';
+//     $display_price .= '<br>';
+//     $display_price .= '<span class="amount">€ ' . $price .'<small class="woocommerce-price-suffix"> excl BTW</small></span>';
+//     $display_price .= '</span>';
+//     echo $display_price;
+// }
+// add_filter('woocommerce_get_price_html', 'edit_price_display', 10, 2);
 ?>
